@@ -1,0 +1,69 @@
+{% extends 'bootstrap/base.html' %}
+
+
+
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="../static/css/main.css">
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      {% if title == 'Who We Are' %}
+      <li class="nav-item active">
+      {% else %}
+      <li class="nav-item">
+      {% endif %}
+        <a class="nav-link" href="{{ url_for('who_we_are') }}">Who We Are<span class="sr-only">(current)</span></a>
+      </li>
+
+      {% if title == 'Cars' %}
+      <li class="nav-item active">
+      {% else %}
+      <li class="nav-item">
+      {% endif %}
+        <a class="nav-link" href="{{ url_for('cars') }}">Cars</a>
+      </li>
+
+      {% if title == 'Find' %}
+      <li class="nav-item active">
+      {% else %}
+      <li class="nav-item">
+      {% endif %}
+        <a class="nav-link" href="{{ url_for('find') }}">Find</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+<main>
+
+{% block content %}
+
+{% block app_content %}{% endblock %}
+
+</main>
+
+
+<footer>
+  <div class="row">
+    <div class="col-md-12">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div> <!-- end col 12 -->
+  </div> <!-- end row -->
+
+  <!--  -->
+</footer>
+{% endblock %}
+
+
+<h1>This should print </h1>
